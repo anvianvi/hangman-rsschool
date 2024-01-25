@@ -21,6 +21,9 @@ ul {
   // display: grid;
   // justify-content: center;
   // grid-template-rows: auto 1fr auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: $color-background-body;
 
   font-family: $font-family;
@@ -33,6 +36,22 @@ ul {
 .layout-container {
   max-width: 348px;
   width: 98vw;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-background-body;
+  color: $color-text-dark;
+  border: 1px solid $color-border-dark;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: $color-text-light;
+    background: $color-background-container;
+  }
 }
 
 @media (width>766px) {
