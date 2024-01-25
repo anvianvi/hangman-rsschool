@@ -2,6 +2,7 @@
 import { wordLength, mysteryWord, updateMysteryWord } from "./variables";
 import { fetchRandomWord } from "./api";
 import { defaultWords } from "./words";
+import { renderGallows } from "./gallows";
 
 export async function guessWorld() {
   let guessedWord = await fetchRandomWord(wordLength) || defaultWords[Math.floor(Math.random() * defaultWords.length)];
@@ -19,6 +20,7 @@ function rednderGameField() {
 
   document.body.replaceChildren(container);
 
-  container.textContent = mysteryWord
+  console.log(mysteryWord)
+  renderGallows()
 
 }
