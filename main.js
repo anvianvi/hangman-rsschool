@@ -1,30 +1,16 @@
 import '/styles/global.scss'
-import './scripts/words';
-// import '/styles/header.scss'
-// import './scripts/enjoy';
-// import '/styles/enjoy.scss'
-// import '/styles/about.scss'
-// import '/styles/mobile-app.scss'
-// import '/styles/footer.scss'
 
 import { defaultWords } from './scripts/words';
-console.log(defaultWords)
+import { fetchRandomWord } from './scripts/api';
+import { renderStartScreen } from './scripts/start-screen';
 
-async function fetchRandomWord(length) {
-  try {
-    const response = await fetch(`https://random-word-api.vercel.app/api?words=1&length=${length}`);
-    const data = await response.json();
+let mysteryWordLength = 6
 
-    if (data && data.length > 0) {
-      console.log(data)
-      console.log(data[0])
-    } else {
-      console.log("Error fetching word.");
-    }
-  } catch (error) {
-    console.error("Error fetching word:", error);
-    console.log("Error fetching word.");
-  }
-}
+fetchRandomWord(mysteryWordLength)
+renderStartScreen(mysteryWordLength)
 
-fetchRandomWord(6)
+let mysteryWord = await fetchRandomWord(mysteryWordLength) || defaultWords[Math.floor(Math.random() * defaultWords.length)];
+
+
+console.log(mysteryWord)
+

@@ -10,5 +10,3 @@ export const defaultWords = [
   "jingle", "appear", "anemia",
   "botany", "canyon", "rocket"
 ];
-
-console.log(defaultWords)
