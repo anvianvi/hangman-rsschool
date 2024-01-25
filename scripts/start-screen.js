@@ -1,8 +1,7 @@
 import { wordLength, updateWordLength } from './variables';
+import { guessWorld } from './init-game';
 
 export function renderStartScreen() {
-  const body = document.body;
-
   const container = document.createElement('div');
   container.className = 'start-screen-container'
 
@@ -50,7 +49,7 @@ export function renderStartScreen() {
 
   container.appendChild(startButton);
 
-  body.replaceChildren(container);
+  document.body.replaceChildren(container);
 
   decreaseButton.addEventListener('click', function () {
     if (wordLength > 4) {
@@ -71,6 +70,6 @@ export function renderStartScreen() {
   }
 
   startButton.addEventListener('click', function () {
-    console.log(wordLength)
+    guessWorld()
   });
 }
