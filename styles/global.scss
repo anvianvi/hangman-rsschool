@@ -1,0 +1,48 @@
+@import "./variables";
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  min-height: 100vh;
+  // display: grid;
+  // justify-content: center;
+  // grid-template-rows: auto 1fr auto;
+  background: $color-background-body;
+
+  font-family: $font-family;
+  color: $color-text-dark;
+  line-height: 150%;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.layout-container {
+  max-width: 348px;
+  width: 98vw;
+}
+
+@media (width>766px) {
+  .layout-container {
+    max-width: 688px;
+  }
+}
+
+@media (width>1438px) {
+  .layout-container {
+    max-width: 1360px;
+  }
+}
