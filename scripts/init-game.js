@@ -3,6 +3,7 @@ import { wordLength, mysteryWord, updateMysteryWord } from "./variables";
 import { fetchRandomWord } from "./api";
 import { defaultWords } from "./words";
 import { renderGallows } from "./gallows";
+import { renderUppercaseKeyboard } from "./keybord";
 
 export async function guessWorld() {
   let guessedWord = await fetchRandomWord(wordLength) || defaultWords[Math.floor(Math.random() * defaultWords.length)];
@@ -22,5 +23,14 @@ function rednderGameField() {
 
   console.log(mysteryWord)
   renderGallows()
+
+  const rightPart = document.createElement('div');
+  rightPart.className = 'rightpart'
+  rightPart.id = 'right-part'
+
+  container.appendChild(rightPart)
+  //game-field
+  //word-part
+  renderUppercaseKeyboard()
 
 }

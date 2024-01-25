@@ -72,5 +72,5 @@ export function renderStartScreen() {
   startButton.addEventListener('click', function () {
     guessWorld()
   });
-  // guessWorld()
+  guessWorld()
 }
