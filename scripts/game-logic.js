@@ -7,11 +7,14 @@ export function initRealKeyboardListeners() {
   })
 }
 
-export function checkInput(simpol) {
+export function checkInput(simbol) {
   console.log(mysteryWord)
-  console.log(simpol)
-  if (mysteryWord.includes(simpol)) {
+  console.log(simbol)
+  if (mysteryWord.includes(simbol)) {
     console.log('there is this smpol in word')
+    let x = findLetterIndexes(simbol)
+    console.log(x)
+    showLetter(x, simbol)
 
   } else {
     updateIncorrectGuessesCount(incorrectGuessesCount + 1)
@@ -30,4 +33,28 @@ function updateGallows(errorsCount) {
   for (let index = 0; index < errorsCount; index++) {
     parts[index].style.opacity = 1
   }
+}
+
+function findLetterIndexes(letter) {
+  const indexes = [];
+  for (let i = 0; i < mysteryWord.length; i++) {
+    if (mysteryWord[i] === letter) {
+      indexes.push(i);
+    }
+  }
+  return indexes;
+}
+
+
+function showLetter(indexes, letter) {
+
+  indexes.forEach(element => {
+    console.log(element)
+    console.log(letter)
+    console.log(document.getElementById(`letter-${element}`))
+    let letterBox = document.getElementById(`letter-${element}`)
+    letterBox.textContent = letter
+    letterBox.style.borderBottom = 0
+  });
+
 }
