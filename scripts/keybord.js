@@ -1,3 +1,5 @@
+import { checkInput } from "./game-logic";
+
 function generateUppercaseAlphabet() {
   const alphabet = [];
   const startCharCode = 'A'.charCodeAt(0);
@@ -23,6 +25,11 @@ export function renderUppercaseKeyboard() {
     keyElement.id = `${letter}`
     keyElement.textContent = letter;
     keyboardContainer.appendChild(keyElement);
+
+    keyElement.addEventListener('click', () => {
+      console.log(letter)
+      checkInput(letter.toLocaleLowerCase())
+    })
   });
 
   document.getElementById('right-part').appendChild(keyboardContainer)
