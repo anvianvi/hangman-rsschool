@@ -1,4 +1,4 @@
-import { incorrectGuessesCount, mysteryWord, updateIncorrectGuessesCount, } from "./variables";
+import { incorrectGuessesCount, lettersToGuess, mysteryWord, updateIncorrectGuessesCount, updateLettersToGuess, } from "./variables";
 
 export function initRealKeyboardListeners() {
   document.addEventListener('keyup', function (event) {
@@ -47,14 +47,14 @@ function findLetterIndexes(letter) {
 
 
 function showLetter(indexes, letter) {
-
   indexes.forEach(element => {
     console.log(element)
-    console.log(letter)
-    console.log(document.getElementById(`letter-${element}`))
     let letterBox = document.getElementById(`letter-${element}`)
     letterBox.textContent = letter
     letterBox.style.borderBottom = 0
-  });
+    updateLettersToGuess(lettersToGuess - 1)
 
+  });
+  // indexes.forEach((element) => {
+  // });
 }

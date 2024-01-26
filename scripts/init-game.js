@@ -1,5 +1,5 @@
 
-import { wordLength, mysteryWord, updateMysteryWord } from "./variables";
+import { wordLength, mysteryWord, updateMysteryWord, updateLettersToGuess, lettersToGuess } from "./variables";
 import { fetchRandomWord } from "./api";
 import { defaultWords } from "./words";
 import { renderGallows } from "./gallows";
@@ -10,7 +10,7 @@ import { initRealKeyboardListeners } from "./game-logic";
 export async function guessWorld() {
   let guessedWord = await fetchRandomWord(wordLength) || defaultWords[Math.floor(Math.random() * defaultWords.length)];
   updateMysteryWord(guessedWord)
-
+  updateLettersToGuess(mysteryWord.length)
   rednderGameField(mysteryWord)
 };
 

@@ -1,6 +1,7 @@
 let wordLength = 6;
 let mysteryWord = 'error'
 let incorrectGuessesCount = 0
+let lettersToGuess = 0
 
 function updateWordLength(newValue) {
   wordLength = newValue;
@@ -19,6 +20,14 @@ function updateIncorrectGuessesCount(newValue) {
   }
 }
 
+function updateLettersToGuess(newValue) {
+  if (newValue === 0) {
+    lettersToGuess = newValue;
+    console.log('you win')
+  } else {
+    lettersToGuess = newValue
+  }
+}
 
 
-export { wordLength, updateWordLength, mysteryWord, updateMysteryWord, incorrectGuessesCount, updateIncorrectGuessesCount };
+export { wordLength, updateWordLength, mysteryWord, updateMysteryWord, incorrectGuessesCount, updateIncorrectGuessesCount, lettersToGuess, updateLettersToGuess };
