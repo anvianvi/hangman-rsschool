@@ -1,5 +1,5 @@
 
-import { wordLength, mysteryWord, updateMysteryWord, updateLettersToGuess, lettersToGuess } from "./variables";
+import { wordLength, mysteryWord, updateMysteryWord, updateLettersToGuess, lettersToGuess, incorrectGuessesCount } from "./variables";
 import { fetchRandomWord } from "./api";
 import { defaultWords } from "./words";
 import { renderGallows } from "./gallows";
@@ -33,6 +33,12 @@ function rednderGameField() {
   container.appendChild(rightPart)
   //game-field
   renderMainAria()
+
+  const mistakesBox = document.createElement('div')
+  mistakesBox.className = 'misstakesBox'
+  mistakesBox.textContent = `Incorrect guesses: ${incorrectGuessesCount}/6`
+  rightPart.appendChild(mistakesBox)
+
   renderUppercaseKeyboard()
   initRealKeyboardListeners()
 

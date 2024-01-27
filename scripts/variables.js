@@ -14,9 +14,12 @@ function updateMysteryWord(newValue) {
 function updateIncorrectGuessesCount(newValue) {
   if (newValue < 7) {
     incorrectGuessesCount = newValue;
+    const mistakesBox = document.querySelector('.misstakesBox')
+    mistakesBox.textContent = `Incorrect guesses: ${incorrectGuessesCount}/6`
 
   } else {
     console.log('game end')
+    showModal()
   }
 }
 
