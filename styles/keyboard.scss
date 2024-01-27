@@ -27,3 +27,22 @@
     background: $color-background-container;
   }
 }
+.key.present {
+  background: $color-text-accent;
+  color: $color-text-light;
+
+  &:hover {
+    background: $color-text-accent;
+    color: $color-text-light;
+  }
+}
+
+.key.absent {
+  background: $color-background-backdrop;
+  color: $color-text-light;
+
+  &:hover {
+    background: $color-background-backdrop;
+    color: $color-text-light;
+  }
+}

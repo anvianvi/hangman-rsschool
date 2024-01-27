@@ -4,6 +4,7 @@ let wordLength = 6;
 let mysteryWord = 'error'
 let incorrectGuessesCount = 0
 let lettersToGuess = 0
+let pressedLettersArr = []
 
 function updateWordLength(newValue) {
   wordLength = newValue;
@@ -14,23 +15,23 @@ function updateMysteryWord(newValue) {
 }
 
 function updateIncorrectGuessesCount(newValue) {
+
   if (newValue === 0) {
     incorrectGuessesCount = newValue;
     return
   }
-  if (newValue < 7) {
-    incorrectGuessesCount = newValue;
-    const mistakesBox = document.querySelector('.misstakesBox')
-    mistakesBox.textContent = `Incorrect guesses: ${incorrectGuessesCount}/6`
 
-  } else {
+  incorrectGuessesCount = newValue;
+  const mistakesBox = document.querySelector('.misstakesBox')
+  mistakesBox.textContent = `Incorrect guesses: ${incorrectGuessesCount}/6`
+
+  if (newValue === 6) {
     renderEndGameModal('lose')
   }
+
 }
 
 function updateLettersToGuess(newValue) {
-  console.log(lettersToGuess)
-  console.log(newValue)
 
   if (newValue === 0) {
     lettersToGuess = newValue;
@@ -41,5 +42,12 @@ function updateLettersToGuess(newValue) {
   }
 }
 
+function updatePressedLettersArr(newValue) {
+  pressedLettersArr.push(newValue);
+}
 
-export { wordLength, updateWordLength, mysteryWord, updateMysteryWord, incorrectGuessesCount, updateIncorrectGuessesCount, lettersToGuess, updateLettersToGuess };
+function clearPressedLettersArr() {
+  pressedLettersArr = []
+}
+
+export { wordLength, updateWordLength, mysteryWord, updateMysteryWord, incorrectGuessesCount, updateIncorrectGuessesCount, lettersToGuess, updateLettersToGuess, pressedLettersArr, updatePressedLettersArr, clearPressedLettersArr };

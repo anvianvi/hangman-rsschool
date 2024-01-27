@@ -59,7 +59,7 @@ export function renderStartScreen() {
   });
 
   increaseButton.addEventListener('click', function () {
-    if (wordLength < 10) {
+    if (wordLength < 9) {
       updateWordLength(wordLength + 1)
       updateWordLengthLabel();
     }

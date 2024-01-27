@@ -1,4 +1,5 @@
-import { incorrectGuessesCount, lettersToGuess, mysteryWord, updateIncorrectGuessesCount, updateLettersToGuess, } from "./variables";
+import { virtualKeybordClickListener } from "./keybord";
+import { incorrectGuessesCount, lettersToGuess, mysteryWord, pressedLettersArr, updateIncorrectGuessesCount, updateLettersToGuess, updatePressedLettersArr, } from "./variables";
 
 export function initRealKeyboardListeners() {
   document.addEventListener('keyup', kyePressListener)
@@ -10,17 +11,21 @@ export function kyePressListener(event) {
 }
 
 export function checkInput(simbol) {
-  console.log(mysteryWord)
-  console.log(simbol)
-  if (mysteryWord.includes(simbol)) {
-    console.log('there is this smpol in word')
-    let x = findLetterIndexes(simbol)
-    console.log(x)
-    showLetter(x, simbol)
 
-  } else {
-    updateIncorrectGuessesCount(incorrectGuessesCount + 1)
-    updateGallows(incorrectGuessesCount)
+  if (!pressedLettersArr.includes(simbol)) {
+    updatePressedLettersArr(simbol)
+    const key = document.querySelector(`#${simbol.toUpperCase()}`)
+    key.removeEventListener('click', virtualKeybordClickListener())
+
+    if (mysteryWord.includes(simbol)) {
+      key.classList.add('present')
+      showLetter(findLetterIndexes(simbol), simbol)
+
+    } else {
+      key.classList.add('absent')
+      updateIncorrectGuessesCount(incorrectGuessesCount + 1)
+      updateGallows(incorrectGuessesCount)
+    }
   }
 }
 

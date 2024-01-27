@@ -1,9 +1,10 @@
-import { mysteryWord, updateIncorrectGuessesCount } from "./variables";
+import { clearPressedLettersArr, mysteryWord, updateIncorrectGuessesCount } from "./variables";
 import { renderStartScreen } from "./start-screen";
 import { kyePressListener } from "./game-logic";
 import { virtualKeybordClickListener } from "./keybord";
 
 export function renderEndGameModal(result) {
+  clearPressedLettersArr()
   document.removeEventListener('keyup', kyePressListener)
   const keys = document.querySelectorAll('.key')
   keys.forEach(element => {
