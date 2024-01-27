@@ -1,3 +1,5 @@
+import { renderEndGameModal } from "./end-game-modal";
+
 let wordLength = 6;
 let mysteryWord = 'error'
 let incorrectGuessesCount = 0
@@ -12,21 +14,25 @@ function updateMysteryWord(newValue) {
 }
 
 function updateIncorrectGuessesCount(newValue) {
+  if (newValue === 0) {
+    incorrectGuessesCount = newValue;
+    return
+  }
   if (newValue < 7) {
     incorrectGuessesCount = newValue;
     const mistakesBox = document.querySelector('.misstakesBox')
     mistakesBox.textContent = `Incorrect guesses: ${incorrectGuessesCount}/6`
 
   } else {
-    console.log('game end')
-    showModal()
+    renderEndGameModal('lose')
   }
 }
 
 function updateLettersToGuess(newValue) {
   if (newValue === 0) {
     lettersToGuess = newValue;
-    console.log('you win')
+    renderEndGameModal('win')
+
   } else {
     lettersToGuess = newValue
   }
