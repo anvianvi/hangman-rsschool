@@ -29,6 +29,9 @@ function updateIncorrectGuessesCount(newValue) {
 }
 
 function updateLettersToGuess(newValue) {
+  console.log(lettersToGuess)
+  console.log(newValue)
+
   if (newValue === 0) {
     lettersToGuess = newValue;
     renderEndGameModal('win')

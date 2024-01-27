@@ -1,7 +1,15 @@
 import { mysteryWord, updateIncorrectGuessesCount } from "./variables";
 import { renderStartScreen } from "./start-screen";
+import { kyePressListener } from "./game-logic";
+import { virtualKeybordClickListener } from "./keybord";
 
 export function renderEndGameModal(result) {
+  document.removeEventListener('keyup', kyePressListener)
+  const keys = document.querySelectorAll('.key')
+  keys.forEach(element => {
+    element.removeEventListener('click', virtualKeybordClickListener)
+  });
+
   const modal = document.createElement('div');
   modal.id = 'modal';
   modal.className = 'modal';

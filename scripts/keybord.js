@@ -26,11 +26,12 @@ export function renderUppercaseKeyboard() {
     keyElement.textContent = letter;
     keyboardContainer.appendChild(keyElement);
 
-    keyElement.addEventListener('click', () => {
-      console.log(letter)
-      checkInput(letter.toLocaleLowerCase())
-    })
+    keyElement.addEventListener('click', virtualKeybordClickListener(letter))
   });
 
   document.getElementById('right-part').appendChild(keyboardContainer)
+}
+
+export function virtualKeybordClickListener(letter) {
+  return function () { checkInput(letter.toLocaleLowerCase()) }
 }

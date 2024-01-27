@@ -1,10 +1,12 @@
 import { incorrectGuessesCount, lettersToGuess, mysteryWord, updateIncorrectGuessesCount, updateLettersToGuess, } from "./variables";
 
 export function initRealKeyboardListeners() {
-  document.addEventListener('keyup', function (event) {
-    let pressedKey = event.code.slice(3).toLocaleLowerCase()
-    checkInput(pressedKey)
-  })
+  document.addEventListener('keyup', kyePressListener)
+}
+
+export function kyePressListener(event) {
+  let pressedKey = event.code.slice(3).toLocaleLowerCase()
+  checkInput(pressedKey)
 }
 
 export function checkInput(simbol) {
