@@ -9,6 +9,7 @@
 }
 
 .key {
+  user-select: none;
   cursor: pointer;
   text-align: center;
   width: 30px;
@@ -28,6 +29,7 @@
   }
 }
 .key.present {
+  cursor: auto;
   background: $color-text-accent;
   color: $color-text-light;
 
@@ -38,6 +40,7 @@
 }
 
 .key.absent {
+  cursor: auto;
   background: $color-background-backdrop;
   color: $color-text-light;
 
