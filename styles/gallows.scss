@@ -96,3 +96,13 @@
     height: 95px;
   }
 }
+@media (width<766px) {
+  .gallows-box {
+    scale: 0.6;
+    height: 380px;
+
+    .column {
+      height: 530px;
+    }
+  }
+}
