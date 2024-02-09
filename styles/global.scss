@@ -1,0 +1,64 @@
+@import "./variables";
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-background-body;
+
+  font-family: $font-family;
+  color: $color-text-dark;
+  line-height: 150%;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.layout-container {
+  max-width: 348px;
+  width: 98vw;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-background-body;
+  color: $color-text-dark;
+  border: 1px solid $color-border-dark;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: $color-text-light;
+    background: $color-background-container;
+  }
+}
+
+@media (width>766px) {
+  .layout-container {
+    max-width: 688px;
+  }
+}
+
+@media (width>1438px) {
+  .layout-container {
+    max-width: 1360px;
+  }
+}

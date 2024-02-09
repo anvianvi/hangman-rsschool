@@ -1,0 +1,29 @@
+@import "./variables";
+
+.modal {
+  background: rgba(64, 63, 61, 0.8);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+
+  .modal-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 30px;
+    background: $color-background-body;
+    box-shadow: 0 0px 4px $color-background-body;
+    border-radius: 15px;
+  }
+  .start-new-game-button {
+    margin: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+  }
+}

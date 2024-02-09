@@ -1,0 +1,51 @@
+@import "./variables";
+
+.keyboard {
+  max-width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.key {
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-background-body;
+  color: $color-text-dark;
+  border: 1px solid $color-border-dark;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: $color-text-light;
+    background: $color-background-container;
+  }
+}
+.key.present {
+  cursor: auto;
+  background: $color-text-accent;
+  color: $color-text-light;
+
+  &:hover {
+    background: $color-text-accent;
+    color: $color-text-light;
+  }
+}
+
+.key.absent {
+  cursor: auto;
+  background: $color-background-backdrop;
+  color: $color-text-light;
+
+  &:hover {
+    background: $color-background-backdrop;
+    color: $color-text-light;
+  }
+}
