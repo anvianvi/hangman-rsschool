@@ -31,7 +31,6 @@ function rednderGameField() {
   rightPart.id = 'right-part'
 
   container.appendChild(rightPart)
-  //game-field
   renderMainAria()
 
   const mistakesBox = document.createElement('div')

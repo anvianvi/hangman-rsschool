@@ -55,13 +55,11 @@ function findLetterIndexes(letter) {
 
 function showLetter(indexes, letter) {
   indexes.forEach(element => {
-    console.log(element)
     let letterBox = document.getElementById(`letter-${element}`)
     letterBox.textContent = letter
     letterBox.style.borderBottom = 0
     updateLettersToGuess(lettersToGuess - 1)
 
   });
-  // indexes.forEach((element) => {
-  // });
+
 }

@@ -52,7 +52,5 @@ export function renderGallows() {
   gallowsBox.appendChild(leftLeg)
   gallowsBox.appendChild(rightLeg)
 
-
   container.appendChild(gallowsBox)
-  console.log(1)
 }
