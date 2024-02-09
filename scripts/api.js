@@ -23,12 +23,12 @@ export async function fetchWordDescription(word) {
     const data = await response.json();
 
     if (data && data.length > 0) {
-      const quantityOfMeanings = data[0].meanings[0].definitions.length;
-      const randomSelectedDefeniton = Math.floor(
-        Math.random() * quantityOfMeanings
-      );
-      return data[0].meanings[0].definitions[randomSelectedDefeniton]
-        .definition;
+      const allDefenitions = data[0].meanings[0].definitions;
+      const quantityOfMeanings = allDefenitions.length;
+      const randomNumber = Math.floor(Math.random() * quantityOfMeanings);
+      const selectedDefenition = allDefenitions[randomNumber].definition;
+
+      return selectedDefenition.slice(0, -1);
     } else {
       console.log("Error fetching word.");
     }
