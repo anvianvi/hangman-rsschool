@@ -5,7 +5,8 @@ let mysteryWord = "error";
 let incorrectGuessesCount = 0;
 let lettersToGuess = 0;
 let pressedLettersArr = [];
-let wordDescription = 'Oops, there is some problems wothe API providing the hints, we apologize, try to guess the word without a hint or refresh the page.'
+let wordDescription =
+  "Oops, there is some problems wothe API providing the hints, we apologize, try to guess the word without a hint or refresh the page.";
 
 function updateWordLength(newValue) {
   wordLength = newValue;

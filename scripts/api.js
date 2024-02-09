@@ -27,7 +27,8 @@ export async function fetchWordDescription(word) {
       const randomSelectedDefeniton = Math.floor(
         Math.random() * quantityOfMeanings
       );
-      return data[0].meanings[0].definitions[randomSelectedDefeniton].definition;
+      return data[0].meanings[0].definitions[randomSelectedDefeniton]
+        .definition;
     } else {
       console.log("Error fetching word.");
     }
